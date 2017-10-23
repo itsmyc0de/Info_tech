@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<script type="text/javascript">
+function validate(){
+var name=document.getElementById('nm').value;
+var ph=document.getElementById('ph').value;
+var addr=document.getElementById('addr').value;
+var error=document.getElementById('error');
+if(name.length == 0){error.innerHTML="Name is Empty";}
+else if(ph.length == 0){error.innerHTML="Phone is Empty";}
+else if(addr.length == 0){error.innerHTML="Address is Empty";}
+
+if(!name.match(/^[a-zA-Z]+$/)){error.innerHTML="Only Charecters Allowed in the Name";}
+else if(!ph.match(/^[0-9]+$/)){error.innerHTML="Only Numbers Allowed in the Phone";}
+else if(!addr.match(/^[a-zA-Z]+$/)){error.innerHTML="Only charecters and numbers Allowed in the Address";}
+else{error.innerHTML="";}
+}	
+</script>
+<body>
+<table width="532" height="353" border="0" align="center">
+<tr>
+<td colspan="2"><span id="error" style="color:#FF0000;"></td>
+</tr>
+<tr align="center">
+<td colspan="2">Contact Page</td>
+</tr>
+<tr align="center">
+<td>Name:</td>
+<td><input type="text" id="nm" /></td>
+</tr>
+<tr align="center">
+<td height="40">Phone:</td>
+<td><input type="text" id="ph" /></td>
+</tr>
+<tr align="center">
+<td height="104">Address:</td>
+<td><textarea id="addr"></textarea></td>
+</tr>
+<tr align="center">
+<td colspan="2"><input type="submit" value="Submit" onclick="validate()" /></td>
+</tr>
+</table>
+</body>
+</html>
